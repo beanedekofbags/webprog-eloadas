@@ -1,0 +1,26 @@
+body {
+    margin: 0 0;
+}
+
+.text {
+    margin: 20px 30%;
+    padding: 10px 30px;
+    background-color: rgb(209, 209, 209);
+}
+
+header {
+    margin: 0 auto;
+    left: 0; right: 0;
+    width: 90%;
+    text-align: center;
+}
+
+footer {
+    background-color: rgb(171, 187, 206);
+    position: sticky;
+    bottom: 0px;
+    left: 0; right: 0;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+}
