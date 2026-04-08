@@ -1,33 +1,63 @@
 body {
     margin: 0 0;
-}
-
-.text {
-    margin: 20px 30%;
-    padding: 10px 30px;
-    background-color: rgb(209, 209, 209);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(16, 21, 32)
 }
 
 header {
     margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    
+    position: sticky;
+    top: 0;
+    left: 0; right: 0;
+    
+    text-align: center;
+    
+    background-color: rgb(16, 21, 32);
+    color: white;
+}
+header > div {
+    border-bottom: 2px solid white;
+    margin: 0 auto;
     left: 0; right: 0;
     width: 90%;
-    text-align: center;
+}
+.headertext {
+    font-weight: 100;
+}
+
+.contents {
+    margin: 0px 30%;
+    padding: 10px 30px;
+    
+    background-color: rgb(0, 0, 0);
+    color: rgb(138, 166, 197);
 }
 
 footer {
-    background-color: rgb(171, 187, 206);
+    padding-top: 20px;
+    padding-bottom: 10px;
+    
     position: sticky;
-    bottom: 0px;
     left: 0; right: 0;
-    height: 60px;
+    bottom: 0;
     width: 100%;
-}
-footer p{
-    position: absolute;
+    
     text-align: center;
-    margin: 0;
-    transform: translate(0%, -50%);
-    top: 50%;
-    width: 100%;
+    
+    background-color: rgb(16, 21, 32);
+    color: white;
+}
+footer > div {
+    border-top: 2px solid white;
+    margin: 0 auto;
+    left: 0; right: 0;
+    width: 90%;
+}
+.authortext {
+    font-weight: 100;
+    margin: inherit;
+    padding: 10px 10px;
 }
