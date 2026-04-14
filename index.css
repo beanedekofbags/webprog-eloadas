@@ -1,60 +1,164 @@
-body {
-    margin: 0 0;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: rgb(16, 21, 32)
+:root {
+    --body-color: rgb(16, 21, 32);
+    --highlight-color: rgb(255, 255, 255);
+    --textbox-color:  rgb(255, 255, 255);
+    --backdrop-color: rgb(11, 13, 20);
+    --text-color: rgb(0, 0, 0);
 }
 
+body {
+    margin: 0 0;
+    font-family:'Bricolage Grotesque', Verdana, sans-serif;
+    background-color: var(--body-color);
+}
+
+#container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 header {
-    margin: 0 auto;
-    padding-top: 10px;
-    padding-bottom: 20px;
+    z-index: 5;
     
-    position: sticky;
-    top: 0;
-    left: 0; right: 0;
+    margin: 0 auto;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    width: 90%;
     
     text-align: center;
     
-    background-color: rgb(16, 21, 32);
-    color: white;
-}
-header > div {
-    border-bottom: 2px solid white;
-    margin: 0 auto;
-    left: 0; right: 0;
-    width: 90%;
+    background-color: var(--body-color);
+    color: var(--highlight-color);
+    border-bottom: 2px solid var(--highlight-color);
 }
 .headertext {
-    font-weight: 100;
+    letter-spacing: 10px;
+    font-weight: 900;
 }
 
-.contents {
-    margin: 0px 30%;
-    padding: 10px 30px;
+#navigation {
+    display: flex;
+    flex-direction: row;
     
-    background-color: rgb(0, 0, 0);
-    color: rgb(138, 166, 197);
+    margin: 10px auto;
+    align-items: center;
+    justify-content: center;
+    
+    width: 90%;
+    height: 10%;
+}
+.navbutton {
+    padding: 15px 30px;
+    width: 100%;
+    
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 600;
+    
+    cursor: pointer;
+    user-select: none;
+    
+    transition: 0.2s;
+    background-color: var(--backdrop-color);
+    color: white;
+}
+.navbutton:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
+/* tartalmi rész */
+main {
+    position: relative;
+    display: grid;
+    
+    grid-template-areas: 
+        "leftside text0 rightside";
+    grid-template-columns: 30% 40% 30%;
+    
+    margin: 0 auto;
+    padding: 0;
+    
+    width: 90%;
+    height: 100%;
+    overflow: auto;
+    
+    min-width: 300px;
+    background-color: var(--backdrop-color);
+}
+
+/* képek */
+.side {
+    position: relative;
+    margin: 15px;
+    overflow: hidden;
+}
+#leftside {
+    grid-area: "leftside";
+}
+#rightside {
+    grid-area: "rightside";
+}
+
+.sideimg {
+    position: absolute;
+    width: 100%;
+    max-width: 800px;
+    min-width: 100px;
+    padding: 10px 0;
+    
+    border-top: 2px solid var(--highlight-color);
+    border-bottom: 2px solid var(--highlight-color);
+}
+#img1 { top: 50%; transform: translateY(-50%); }
+#img2 { top: 0%; }
+#img3 { top: 100%; transform: translateY(-100%); }
+
+/* szöveg */
+.textbox {
+    margin: 0 auto;
+    padding: 15px 30px;
+    
+    left: 0; right: 0;
+    width: auto;
+    min-width: 100px;
+    
+    background-color: var(--textbox-color);
+    color: var(--text-color);
+}
+
+.textbox h2 {
+    display: flex;
+}
+.textbox h2::after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px dotted var(--text-color);
+    margin: auto;
+    margin-left: 10px
+}
+
+#text1 {
+    grid-area: "text1";
 }
 
 footer {
-    padding-top: 20px;
+    z-index: 5;
+    
+    margin: 0 auto;
+    margin-top: 20px;
     padding-bottom: 10px;
     
-    position: sticky;
-    left: 0; right: 0;
-    bottom: 0;
-    width: 100%;
+    width: 90%;
+    height: 10%;
     
     text-align: center;
     
-    background-color: rgb(16, 21, 32);
-    color: white;
-}
-footer > div {
-    border-top: 2px solid white;
-    margin: 0 auto;
-    left: 0; right: 0;
-    width: 90%;
+    background-color: var(--body-color);
+    color: var(--highlight-color);
+    border-top: 2px solid var(--highlight-color);
 }
 .authortext {
     font-weight: 100;
