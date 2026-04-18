@@ -1,0 +1,44 @@
+:root {
+    --body-color: rgb(16, 21, 32);
+    --highlight-color: rgb(255, 255, 255);
+    --textbox-color:  rgb(255, 255, 255);
+    --backdrop-color: rgb(11, 13, 20);
+    --text-color: rgb(0, 0, 0);
+}
+
+/* tartalmi rész */
+main {
+    grid-template-areas: 
+        "leftside text0 rightside";
+    grid-template-columns: 30% 40% 30%;
+}
+
+/* képek */
+.side {
+    position: relative;
+    margin: 15px;
+    overflow: hidden;
+}
+#leftside {
+    grid-area: "leftside";
+}
+#rightside {
+    grid-area: "rightside";
+}
+.sideimg {
+    position: absolute;
+    width: 100%;
+    max-width: 800px;
+    min-width: 100px;
+    padding: 10px 0;
+    
+    border-top: 2px solid var(--highlight-color);
+    border-bottom: 2px solid var(--highlight-color);
+}
+#img1 { top: 50%; transform: translateY(-50%); }
+#img2 { top: 0%; }
+#img3 { top: 100%; transform: translateY(-100%); }
+
+#text1 {
+    grid-area: "text1";
+}
