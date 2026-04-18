@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react'
-import '../../react.css'
+import React, { useState } from 'react'
+import './react.css'
 
 const pizzaList = [
   { nev: 'Áfonyás', kategorianev: 'király', vegetarianus: 0 },
@@ -81,7 +81,9 @@ const pizzaList = [
 function CreateRegistrationTab(props) {
   const defaultFields = {nev: "", kategorianev: "", vegetarianus: 0};
   const [pizzaFields, setPizzaFields] = useState(defaultFields);
+  
   let isEditing = props.editing !== null;
+  const [wasEditing, setWasEditing] = useState(isEditing);
   
   function handleChange(e) {
     const {name, value} = e.target;
@@ -104,10 +106,11 @@ function CreateRegistrationTab(props) {
     props.addPizza(pizza);
   }
   
-  useEffect(() => {
+  if (isEditing !== wasEditing) {
     console.log("editing updated: "+isEditing);
     isEditing ? setPizzaFields(props.editing) : setPizzaFields(defaultFields);
-  }, [props.editing])
+    setWasEditing(isEditing);
+  }
   
   return (
     <>
@@ -195,8 +198,8 @@ function App() {
     console.log(pizzas);
     if (pizzas.filter(p => p !== oldPizza).find(p => p.nev === newPizza.nev) == null) {
       let i = pizzas.findIndex(p => p.nev === oldPizza.nev);
-      pizzas[i] = newPizza;
-      setPizzas(pizzas);
+      let modified = pizzas.slice(); modified[i] = newPizza;
+      setPizzas(modified);
       setEditing(null);
       return;
     }
