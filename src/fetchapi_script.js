@@ -1,4 +1,4 @@
-const api = "fetchapi.php";
+const api = "src/fetchapi.php";
 document.getElementById("OrderForm").addEventListener("submit", saveOrder);
 window.onload = function() {
     fetchOrders();

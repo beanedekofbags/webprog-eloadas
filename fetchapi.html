@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="assets/global.css">
-    <!--<link rel="stylesheet" href="assets/fetchapi.css">-->
+    <link rel="stylesheet" href="assets/fetchapi.css">
 </head>
 <body>
     <header>
@@ -18,33 +18,35 @@
         <div id="navigation">
             <a class="navbutton" href="index.html">INDEX</a>
             <a class="navbutton" href="javascript.html">JAVASCRIPT</a>
-            <a class="navbutton">REACT</a>
+            <a class="navbutton" href="react.html">REACT</a>
+            <a class="navbutton" href="spa.html">SPA</a>
+			<a class="navbutton">FETCH API</a>
+            <a class="navbutton" href="axiios.html">AXIOS</a>
+            <a class="navbutton" href="oojs.html">OOJS</a>
         </div>
         <main>
-        <div class="textbox">
-        <h2>Fetch API</h2>
-        <p id="message"></p>
-        <h3 id="addedit"></h3>
-        <form id="OrderForm">
-            <input type="hidden" id="az">
-            <div>
+        <div class="textbox" id="left">
+            <p id="message"></p>
+            <h1 id="addedit"></h3>
+            <form id="OrderForm">
+                <input type="hidden" id="az">
                 <div>
+                    <label for="pizzanev" class="section">Pizza neve</label>
                     <input type="text" id="pizzanev" placeholder="Pizzanév" required>
-                </div>
-                <div>
+
+                    <label for="darab" class="section">Darabszám</label>
                     <input type="number" id="darab" placeholder="darab" required>
-                </div>
-                <div>
+
+                    <label for="felvetel" class="section">Felvétel időpontja</label>
                     <input type="datetime-local" id="felvetel" required>
-                </div>
-                <div>
+
+                    <label for="kiszallitas" class="section">Kiszállítás időpontja</label>
                     <input type="datetime-local" id="kiszallitas" required>
+                    <div>
+                        <button>Mentés</button>
+                    </div>
                 </div>
-                <div>
-                    <button>Mentés</button>
-                </div>
-            </div>
-        </form>
+            </form>
         </div>
         <div class="textbox">
             <table>
@@ -55,7 +57,7 @@
                         <th>Darabszám</th>
                         <th>Felvétel időpontja</th>
                         <th>Teljesítés időpontja</th>
-                        <th width="150"></th>
+                        <th width="250">Módosít</th>
                 </tr>
             </thead>
 
