@@ -1,0 +1,99 @@
+:root {
+    --body-color: rgb(16, 21, 32);
+    --highlight-color: rgb(255, 255, 255);
+    --textbox-color:  rgb(255, 255, 255);
+    --backdrop-color: rgb(11, 13, 20);
+    --text-color: rgb(0, 0, 0);
+}
+
+/* tartalmi rész */
+main {
+    grid-template-areas: 
+        "navigation"
+        "content";
+    grid-template-rows: 10% auto;
+    grid-template-columns: auto;
+}
+
+@keyframes pizza-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+#pizza-rotate {
+    animation-name: pizza-spin;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 24s;
+}
+#pizza-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 100%;
+    
+    filter: drop-shadow(6px 0 0 white) 
+            drop-shadow(0 6px 0 white)
+            drop-shadow(-6px 0 0 white) 
+            drop-shadow(0 -6px 0 white)
+            drop-shadow(12px 0 0 black) 
+            drop-shadow(0 12px 0 black)
+            drop-shadow(-12px 0 0 black) 
+            drop-shadow(0 -12px 0 black);
+            
+    overflow: hidden;
+}
+
+.pizza-component {
+    grid-row: 1;
+    grid-column: 1;
+}
+.pizza-component>img {
+    width: 100%;
+}
+.hidden {
+    display: none;
+}
+
+.table {
+    border: 1px solid black;
+}
+.row {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+    width: 100%;
+}
+.title-row {
+    background-color: var(--backdrop-color);
+    color: var(--highlight-color);
+}
+.cell {
+    text-align: center;
+    padding: 10px;
+}
+.selectableElement {
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.selected {
+    background-color: rgb(201, 206, 228);
+}
+
+.edit-bar {
+    background-color: rgb(122, 132, 177);
+    height: auto;
+}
+.fillbutton {
+    width: 30%;
+    margin: 5px;
+    height: 30px;
+    overflow-x: hidden;
+}
+.hidden {
+    display: none;
+    height: 0;
+}
+
+.selectableElement:hover {
+    background-color: rgb(211, 216, 240);
+}

@@ -87,7 +87,7 @@ button:active {
     background-color: black;
 }
 
-#navigation {
+.navigation {
     display: flex;
     flex-direction: row;
     

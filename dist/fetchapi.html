@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API</title>
+    
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/global.css">
+    <link rel="stylesheet" href="assets/fetchapi.css">
+</head>
+<body>
+    <header>
+            <h1 class="headertext">WEB PROGRAMOZÁS-1 ELŐADÁS<br>HÁZI FELADAT</h1>
+        </header>
+        <div class="navigation">
+            <a class="navbutton" href="index.html">INDEX</a>
+            <a class="navbutton" href="javascript.html">JAVASCRIPT</a>
+            <a class="navbutton" href="react.html">REACT</a>
+            <a class="navbutton" href="spa.html">SPA</a>
+			<a class="navbutton">FETCH API</a>
+            <a class="navbutton" href="axios.html">AXIOS</a>
+            <a class="navbutton" href="oojs.html">OOJS</a>
+        </div>
+        <main>
+        <div class="textbox" id="left">
+            <p id="message"></p>
+            <h1 id="addedit"></h3>
+            <form id="OrderForm">
+                <input type="hidden" id="az">
+                <div>
+                    <label for="pizzanev" class="section">Pizza neve</label>
+                    <input type="text" id="pizzanev" placeholder="Pizzanév" required>
+
+                    <label for="darab" class="section">Darabszám</label>
+                    <input type="number" id="darab" placeholder="darab" required>
+
+                    <label for="felvetel" class="section">Felvétel időpontja</label>
+                    <input type="datetime-local" id="felvetel" required>
+
+                    <label for="kiszallitas" class="section">Kiszállítás időpontja</label>
+                    <input type="datetime-local" id="kiszallitas" required>
+                    <div>
+                        <button>Mentés</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="textbox">
+            <table>
+                <thead>
+                <tr>
+                        <th>Id</th>
+                        <th>Pizza neve</th>
+                        <th>Darabszám</th>
+                        <th>Felvétel időpontja</th>
+                        <th>Teljesítés időpontja</th>
+                        <th width="250">Módosít</th>
+                </tr>
+            </thead>
+
+                <tbody id="OrderTable"></tbody>
+            </table>
+        </div>
+    <script src="src/fetchapi_script.js"></script>
+    </main>
+    <footer>
+    <span class="authortext">
+        Készítette:
+        <br>
+        Tót Benedek (NZL3EF) & Palotai Péter (CVIZYT)
+        </span>
+    </footer>
+    
+</body>
+</html>

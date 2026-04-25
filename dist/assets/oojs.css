@@ -1,0 +1,44 @@
+main{
+    background-color: white;
+}
+@keyframes forgatas{
+    0%     {transform:rotate(0deg);}
+    25%    {transform:rotate(20deg);}
+    50%    {transform:rotate(0deg);}
+    75%    {transform:rotate(-20deg);}
+    100%    {transform:rotate(0deg);}
+}
+.forgat{
+    animation:forgatas 0.4s linear infinite;
+}
+#kepek{
+    width: 80%;
+    height: 400px;
+    margin: auto;
+    align-content: center;
+    text-align: center;
+}
+#kepek img{
+    box-sizing: border-box;
+    margin: 20px;
+}
+.selected{
+    border: blue 4px dashed;
+    scale: 1.02;
+}
+#gombok{
+    width: 80%;
+    height: 300px;
+    margin: auto;
+    padding: 20px;
+    align-content: center;
+    text-align: center;
+}
+#gombok button{
+    width: 200px;
+    margin: 20px;
+    border-radius: 4px;
+}
+.borderr{
+    border-radius: 20px;
+}
