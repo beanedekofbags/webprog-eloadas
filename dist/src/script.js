@@ -67,6 +67,7 @@ function readFormData() {
 function printArray(){
     let table = document.getElementById('pizza-table-contents');
     table.innerHTML = "";
+    tableContents = new Array();
     for (i = 0; i < tomb.length; i++) {
         insertRow(table, i);
         //cell1 = newRow.insertCell(0);
@@ -82,6 +83,7 @@ function printArray(){
         //cell3.innerHTML = '<a onClick="onEdit('+i+')" class="modify">Módosít</a>' + '<a onClick="onDelete('+i+')" class="delete">Töröl</a>';
         
     }
+    console.log(tableContents);
 }
 
 function getRowElement(index) {
@@ -98,6 +100,7 @@ function getRowElement(index) {
         selectedIndex = index;
         row.className += " selected";
         editbar.className = "edit-bar";
+        console.log(selectedIndex+" "+editingIndex+" ");
     }
     
     row.innerHTML = `
@@ -109,7 +112,7 @@ function getRowElement(index) {
     editbar.className = defaultEditbar;
     editbar.innerHTML = `
         <button class="fillbutton" onclick="startEditing(${i})">SZERKESZTÉS</button>
-        <button class="fillbutton" onclick="onDelete(${i})">TÖRLÉS</button>
+        <button class="fillbutton" onclick="deleteRecord(${i})">TÖRLÉS</button>
     `
     
     return {row, editbar};
@@ -129,6 +132,7 @@ function insertRow(parent, i) {
 function insertNewRecord(data) {
     data.ar = data.ar == "" ? 0 : data.ar;
     tomb.push({ nev: data.nev, ar: data.ar });
+    //resetForm();
     printArray();
 }
 function updateRecord() {

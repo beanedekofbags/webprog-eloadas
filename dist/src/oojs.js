@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var image1 = new kep("kep1","assets/address3.jpg",300,200);
-    var image1 = new kep("kep2","assets/checker.png",200,200);
+    var image1 = new kep("kep1","assets/pizza1.jpg",300,200);
+    var image1 = new kep("kep2","assets/pizza2.jpg",200,200);
     var gomb1 = new forgat("forgat");
-    var gomb1 = new sarok("sarok kerekítés");
+    var gomb1 = new sarok("sarok kerekítése");
     this.hang1 = document.createElement("audio");
     this.hang1.src = "assets/slap-sound-effect.mp3";
     this.hang1.id = "hang1";
