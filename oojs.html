@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Objectum orientált javascript</title>
+    <title>Objektum-orientált JavaScript</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,33 +11,29 @@
     <!-- GOOGLE FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="assets/global.css">
-    <link rel="stylesheet" href="assets/oojs.css">
-    <script src="src/oojs.js"></script>
+    <link rel="stylesheet" href="./src/assets/css/global.css">
+    <link rel="stylesheet" href="./src/assets/css/oojs.css">
+    <script src="./src/oojs.js"></script>
 </head>
 <body>
     <div id="container">
         <header>
-            <h1 class="headertext">WEB PROGRAMOZÁS-1 ELŐADÁS<br>HÁZI FELADAT</h1>
+            <h1 class="headertext">OBJEKTUM-ORIENTÁLT JAVASCRIPT</h1>
         </header>
         <div class="navigation">
-            <a class="navbutton" href="index.html">FŐOLDAL</a>
-            <a class="navbutton" href="javascript.html">JAVASCRIPT</a>
-            <a class="navbutton" href="react.html">REACT</a>
-            <a class="navbutton" href="spa.html">SPA</a>
-			<a class="navbutton" href="fetchapi.html">FETCH API</a>
-            <a class="navbutton" href="axios.html">AXIOS</a>
+            <a class="navbutton" href="./index.html">FŐOLDAL</a>
+            <a class="navbutton" href="./javascript.html">JAVASCRIPT</a>
+            <a class="navbutton" href="./react.html">REACT</a>
+            <a class="navbutton" href="./spa.html">SPA</a>
+			<a class="navbutton" href="./fetchapi.html">FETCH API</a>
+            <a class="navbutton" href="./axios.html">AXIOS</a>
             <a class="navbutton">OOJS</a>
         </div>
         <main>
-            <div id="oojsmain">
-                <p style="padding-left: 20px;">Kattints rá a képre amelyiket módosítani szeretnéd</p>
-                <div id="kepek">
-
-                </div>
-                <div id="gombok">
-
-                </div>
+            <div class="contentbox">
+                <h2 class="section">Kattints rá a módosítani kívánt képre</h2>
+                <div class="centered" id="img-container"></div>
+                <div class="centered" id="button-container"></div>
             </div>
         </main>
         <footer>

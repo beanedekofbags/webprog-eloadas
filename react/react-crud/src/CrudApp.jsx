@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './react.css'
+import './assets/css/react.css'
 
 const pizzaList = [
   { nev: 'Áfonyás', kategorianev: 'király', vegetarianus: 0 },
@@ -157,7 +157,7 @@ function CreatePizzaTable(props) {
   
   return (
     <>
-      <div className="textbox" id="pizza-box">
+      <div className="textbox" id="table-display">
         <div className="table">
           <div className="row title-row">
             <div className="cell">Név</div>

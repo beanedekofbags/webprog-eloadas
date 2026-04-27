@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>React alkalmazás</title>
+    <title>React SPA alkalmazás</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- GOOGLE FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
-    
-
-
-  <script type="module" crossorigin src="/spa.js"></script>
-  <link rel="stylesheet" crossorigin href="/spa.css">
+    
+  <script type="module" crossorigin src="./src/spa.js"></script>
+  <link rel="stylesheet" crossorigin href="./src/assets/css/spa.css">
 </head>
-<body>
-
+<body>
     <div id="container">
         <header>
             <h1 class="headertext">REACT SPA</h1>
         </header>
         <div class="navigation">
-            <a class="navbutton">INDEX</a>
-            <a class="navbutton">JAVASCRIPT</a>
-            <a class="navbutton">REACT</a>
+            <a class="navbutton" href="index.html">FŐOLDAL</a>
+            <a class="navbutton" href="javascript.html">JAVASCRIPT</a>
+            <a class="navbutton" href="react.html">REACT</a>
+            <a class="navbutton">SPA</a>
+			<a class="navbutton" href="fetchapi.html">FETCH API</a>
+            <a class="navbutton" href="axios.html">AXIOS</a>
+            <a class="navbutton" href="oojs.html">OOJS</a>
         </div>
         <main id="root">
         </main>

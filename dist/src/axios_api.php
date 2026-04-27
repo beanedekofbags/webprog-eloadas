@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json');
-require "db_connection.php";
+require "./db_connection.php";
 
 $method = $_SERVER['REQUEST_METHOD'];
 switch ($method) {

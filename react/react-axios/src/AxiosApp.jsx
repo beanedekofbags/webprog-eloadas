@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import './react.css'
+import './assets/css/axios.css'
 
 const pizzaList = []
 
@@ -109,10 +109,11 @@ function CreatePizzaTable(props) {
           </div>
         </div>
       </>
-    )
+    );
   }
 }
 
+const axiosApi = 'src/axios_api.php';
 function App() {
   
   const [pizzas, setPizzas] = useState(new Array());
@@ -123,7 +124,7 @@ function App() {
   }, []);
   
   const fetchPizzaData = async () => {
-    const res = await axios.get("axios_api.php");
+    const res = await axios.get(axiosApi);
     setPizzas(res.data.readData);
     
     console.log('read data:');
@@ -131,14 +132,14 @@ function App() {
   };
   
   async function addPizza(pizza) {
-    const res = await axios.post("axios_api.php", { 'nev': pizza.nev, 'kategorianev': pizza.kategorianev, 'vegetarianus': pizza.vegetarianus });
+    const res = await axios.post(axiosApi, { 'nev': pizza.nev, 'kategorianev': pizza.kategorianev, 'vegetarianus': pizza.vegetarianus });
     
     fetchPizzaData();
     console.log('create data:');
     console.log(res.data);
   }
   async function editPizza(oldPizza, newPizza) {
-    const res = await axios.put("axios_api.php", { 'newnev': newPizza.nev, 'kategorianev': newPizza.kategorianev, 'vegetarianus': newPizza.vegetarianus, 'oldnev': oldPizza.nev });
+    const res = await axios.put(axiosApi, { 'newnev': newPizza.nev, 'kategorianev': newPizza.kategorianev, 'vegetarianus': newPizza.vegetarianus, 'oldnev': oldPizza.nev });
     setEditing(null);
     
     fetchPizzaData();
@@ -148,7 +149,7 @@ function App() {
   async function deletePizza(pizza) {
     console.log(pizza);
     console.log(pizza.nev);
-    const res = await axios.delete("axios_api.php", { data: { 'nev': pizza.nev } });
+    const res = await axios.delete(axiosApi, { data: { 'nev': pizza.nev } });
     
     fetchPizzaData();
     console.log('delete data:');
@@ -160,6 +161,6 @@ function App() {
       <CreateRegistrationTab addPizza={addPizza} editing={editing} editPizza={editPizza} setEditing={setEditing}/>
       <CreatePizzaTable pizzas={pizzas} deletePizza={deletePizza} setEditing={setEditing}/>
     </>
-  )
+  );
 }
 export default App;
