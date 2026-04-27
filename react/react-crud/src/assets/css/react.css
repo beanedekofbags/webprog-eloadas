@@ -1,0 +1,37 @@
+:root {
+    --body-color: rgb(16, 21, 32);
+    --highlight-color: rgb(255, 255, 255);
+    --textbox-color:  rgb(255, 255, 255);
+    --backdrop-color: rgb(11, 13, 20);
+    --text-color: rgb(0, 0, 0);
+}
+
+/* tartalmi rész */
+main {
+    grid-template-areas: 
+        "registration table";
+    grid-template-columns: auto auto;
+}
+
+.row {
+    grid-template-columns: 33.33% 33.33% 33.33%;
+}
+
+.selected {
+    background-color: rgb(201, 206, 228);
+}
+
+.edit-bar {
+    background-color: rgb(122, 132, 177);
+    height: auto;
+}
+.fillbutton {
+    width: 30%;
+    margin: 5px;
+    height: 30px;
+    overflow-x: hidden;
+}
+
+.selectableElement:hover {
+    background-color: rgb(211, 216, 240);
+}

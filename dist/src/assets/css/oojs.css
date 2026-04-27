@@ -1,0 +1,76 @@
+
+.contentbox {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 15px 30px;
+    
+    width: 80%;
+    height: 100%;
+    min-width: 300px;
+    
+    background-color: var(--textbox-color);
+    color: var(--text-color);
+}
+
+#img-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    width: 80%;
+    margin: auto;
+    align-content: center;
+    text-align: center;
+}
+#img-container img{
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 350px;
+    max-height: 350px;
+    margin: 60px;
+    transition: 0.4s;
+}
+#img-container .selected{
+    scale: 1.1;
+    filter: drop-shadow(3px 0 0 white) 
+            drop-shadow(0 3px 0 white)
+            drop-shadow(-3px 0 0 white) 
+            drop-shadow(0 -3px 0 white)
+            drop-shadow(6px 0 0 black) 
+            drop-shadow(0 6px 0 black)
+            drop-shadow(-6px 0 0 black) 
+            drop-shadow(0 -6px 0 black);
+}
+#button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+}
+button {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+}
+
+@keyframes forgatas{
+    0%     {transform:rotate(0deg);}
+    25%    {transform:rotate(20deg);}
+    50%    {transform:rotate(0deg);}
+    75%    {transform:rotate(-20deg);}
+    100%    {transform:rotate(0deg);}
+}
+#img-container .rotate {
+    animation-name: forgatas;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+#img-container .border-round{
+    border-radius: 50%;
+}

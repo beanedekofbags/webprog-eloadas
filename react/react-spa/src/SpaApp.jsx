@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import './reactspa.css'
 import PizzaBuilderApp from './PizzaBuilderApp.jsx'
 import PizzaShooterApp from './PizzaEvalApp.jsx'
+import './assets/css/reactspa.css'
 
 let componentList = new Array();
 
@@ -9,7 +9,7 @@ function addPizzaComponent(name, text, imgsrc, sort, price) {
   sort = sort ?? 0;
   text = text ?? name;
   let c = (
-    <img src={imgsrc}/>
+    <img src={`./src/assets/img/${imgsrc}`}/>
   );
   componentList.push({'name': name, 'text': text, 'contents': c, 'sort': sort, 'price': price});
   return c;

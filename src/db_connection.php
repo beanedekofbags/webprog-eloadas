@@ -5,7 +5,8 @@ $host = "localhost";
 $db   = "pizza";
 $user = "root";
 $pass = "";
-/*szerver
+//szerver
+/*
 $host = "localhost";
 $db   = "nzlzyt_ea_db";
 $user = "nzlzyt_ea_db";

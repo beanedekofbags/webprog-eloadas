@@ -1,0 +1,28 @@
+main {
+    grid-template-areas: 
+        "registration table-display";
+    grid-template-columns: auto auto;
+}
+
+.row {
+    grid-template-columns: 50% 50%;
+}
+
+.selected {
+    background-color: rgb(201, 206, 228);
+}
+
+.edit-bar {
+    background-color: rgb(122, 132, 177);
+    height: auto;
+}
+.fillbutton {
+    width: 30%;
+    margin: 5px;
+    height: 30px;
+    overflow-x: hidden;
+}
+
+.selectableElement:hover {
+    background-color: rgb(211, 216, 240);
+}

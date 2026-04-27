@@ -1,0 +1,13 @@
+main {
+    grid-template-areas: 
+        "registration table-display";
+    grid-template-columns: 30% auto;
+}
+
+.row {
+    grid-template-columns: 8% 20% 8% 20% 20% 24%;
+}
+
+.actionbutton {
+    width: 100px;
+}

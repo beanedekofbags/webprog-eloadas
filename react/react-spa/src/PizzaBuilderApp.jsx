@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import './global.css'
-import './pizzabuilder.css'
+import './assets/css/pizzabuilder.css'
 
 function App(props) {
   

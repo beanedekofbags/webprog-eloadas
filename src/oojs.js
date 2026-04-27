@@ -1,83 +1,95 @@
+let imgs = new Array();
+let sfx = new Array();
+
 document.addEventListener("DOMContentLoaded", function() {
-    var image1 = new kep("kep1","assets/pizza1.jpg",300,200);
-    var image1 = new kep("kep2","assets/pizza2.jpg",200,200);
-    var gomb1 = new forgat("forgat");
-    var gomb1 = new sarok("sarok kerekítése");
-    this.hang1 = document.createElement("audio");
-    this.hang1.src = "assets/slap-sound-effect.mp3";
-    this.hang1.id = "hang1";
-    this.hang1.volume = 0.2;
-    document.body.appendChild(this.hang1);
-    this.hang2 = document.createElement("audio");
-    this.hang2.src = "assets/spongebob-sad-sound.mp3";
-    this.hang2.id = "hang2";
-    this.hang2.volume = 0.2;
-    document.body.appendChild(this.hang2);
+    
+    imgs.push(new ModifiableImage("kep1", "./src/assets/img/pizza1.jpg", 300, 200));
+    imgs.push(new ModifiableImage("kep2", "./src/assets/img/pizza2.jpg", 200, 200));
+    new RotateButton();
+    new BorderButton();
+    
+    const selectSfx = document.createElement("audio");
+    selectSfx.src = "./src/assets/sfx/select.mp3";
+    selectSfx.id = "select-sfx";
+    selectSfx.volume = 0.2;
+    
+    const deselectSfx = document.createElement("audio");
+    deselectSfx.src = "./src/assets/sfx/deselect.mp3";
+    deselectSfx.id = "deselect-sfx";
+    deselectSfx.volume = 0.2;
+    
+    sfx['select'] = selectSfx;
+    sfx['deselect'] = deselectSfx;
+    sfx.forEach(e => {
+        document.body.appendChild(e);
+    });
+    
 });
-var selected = "";
-class kep{
+
+function playSfx(id) {
+    sfx[id].currentTime = 0;
+    sfx[id].play();
+}
+
+let selectedImgs = new Array();
+class ModifiableImage {
+    
     constructor(nev, src, x, y) {
-        this.kepek = document.getElementById("kepek");
+        this.id = nev;
+        console.log(this);
+        this.container = document.getElementById("img-container");
+        
         this.elem = document.createElement("img");
-        this.elem.id = nev;
         this.elem.src = src;
-        this.elem.width = x;
-        this.elem.height = y;
-        this.elem.addEventListener("click", this.onClick)
-        this.kepek.appendChild(this.elem);
+        this.elem.addEventListener("click", this.onClick(this.id));
+        
+        this.container.appendChild(this.elem);
     }
-    onClick()
-    {
-        if(!this.classList.contains("selected") && selected == "")
-        {
-            this.classList.add("selected");
-            this.selected = true;
-            selected = this.id;
-            document.getElementById("hang1").play();
-        }else if (selected == this.id) {
-            this.classList.remove("selected");
-            this.selected = false;
-            selected = "";
-            document.getElementById("hang2").play();
+    
+    onClick(id) {
+        return function eventHandler(e) {
+            let img = e.target;
+            if (selectedImgs.find(i => i == id) == null)
+            {
+                img.classList.add("selected");
+                selectedImgs.push(id);
+                playSfx('select');
+            }
+            else {
+                img.classList.remove("selected");
+                selectedImgs = selectedImgs.filter(i => i != id);
+                playSfx('deselect');
+            }
         }
-        console.log(selected);
     }
 }
-class gombok{
-    constructor(felirat) {
-        this.gombok = document.getElementById("gombok");
+class ModifyButton {
+    constructor(text) {
+        this.container = document.getElementById("button-container");
         this.elem = document.createElement("button");
-        this.elem.innerHTML = felirat;
-        this.elem.addEventListener("click", this.onClick)
-        this.gombok.appendChild(this.elem);
+        if (text != null) this.elem.innerHTML = text;
+        this.elem.addEventListener("click", this.onClick);
+        this.container.appendChild(this.elem);
     }
-    onClick()
-    {
-        var elem = document.getElementById(selected);
-        return elem;
+    onClick() {}
+    toggleEffect(effect) {
+        //console.log(selectedImgs);
+        let elems = imgs.filter(e =>
+            selectedImgs.find(id => {
+                //console.log(id+", "+e.id)
+                return id == e.id;
+            })
+        );
+        elems.forEach(e => {
+            e.elem.classList.contains(effect) ? e.elem.classList.remove(effect) : e.elem.classList.add(effect);
+        });
     }
 }
-class forgat extends gombok{
-    onClick()
-        {
-            if (selected != "") {
-                var elem = super.onClick();
-                console.log(elem.id);
-                if (elem.classList.contains("selected")) {
-                    elem.classList.contains("forgat") ? elem.classList.remove("forgat") : elem.classList.add("forgat");
-                }
-            }
-        }
+class RotateButton extends ModifyButton{
+    constructor() { super("FORGAT"); }
+    onClick() { super.toggleEffect("rotate"); }
 }
-class sarok extends gombok{
-    onClick()
-        {
-            if (selected != "") {
-                var elem = super.onClick();
-                console.log(elem.id);
-                if (elem.classList.contains("selected")) {
-                    elem.classList.contains("borderr") ? elem.classList.remove("borderr") : elem.classList.add("borderr");
-                }
-            }
-        }
+class BorderButton extends ModifyButton{
+    constructor() { super("SARKOK LEKEREKÍTÉSE"); }
+    onClick() { super.toggleEffect("border-round"); }
 }

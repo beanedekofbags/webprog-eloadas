@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import './reactspa.css'
-import './pizzaeval.css'
+import './assets/css/pizzaeval.css'
 
 function EvalResults(props) {
   if (!props.evalStarted) return;
