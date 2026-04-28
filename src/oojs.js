@@ -3,8 +3,8 @@ let sfx = new Array();
 
 document.addEventListener("DOMContentLoaded", function() {
     
-    imgs.push(new ModifiableImage("kep1", "./src/assets/img/pizza1.jpg", 300, 200));
-    imgs.push(new ModifiableImage("kep2", "./src/assets/img/pizza2.jpg", 200, 200));
+    imgs.push(new ModifiableImage("kep1", "./src/assets/img/pizza1.jpg", 400, 300));
+    imgs.push(new ModifiableImage("kep2", "./src/assets/img/pizza2.jpg", 300, 300));
     new RotateButton();
     new BorderButton();
     
@@ -41,6 +41,8 @@ class ModifiableImage {
         
         this.elem = document.createElement("img");
         this.elem.src = src;
+        this.elem.width = x;
+        this.elem.height = y;
         this.elem.addEventListener("click", this.onClick(this.id));
         
         this.container.appendChild(this.elem);

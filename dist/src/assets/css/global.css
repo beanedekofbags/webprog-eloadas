@@ -207,7 +207,7 @@ main {
     text-align: center;
     padding: 10px;
 }
-.selectableElement {
+.selectable-element {
     transition: 0.2s;
     cursor: pointer;
 }

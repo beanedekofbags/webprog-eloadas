@@ -31,7 +31,7 @@ function App(props) {
             props.componentList.map(({name, text, contents, sort}) => {
                 if (name === "base") return;
                 return (
-                  <div className={"pizza-button " + (props.pizzaComponents.find(c => c === name) != null ? "selected" : "")} key={name} onClick={() => toggleComponent(name)}>
+                  <div className={"pizza-button " + (props.pizzaComponents.find(c => c === name) != null ? "selected-pizza-button" : "")} key={name} onClick={() => toggleComponent(name)}>
                     { text }
                   </div>
                 )

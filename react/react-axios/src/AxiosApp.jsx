@@ -84,7 +84,7 @@ function CreatePizzaTable(props) {
   if (props.pizzas != null) {
     return (
       <>
-        <div className="textbox" id="pizza-box">
+        <div className="textbox" id="table-display">
           <div className="table">
             <div className="row title-row">
               <div className="cell">Név</div>
@@ -94,7 +94,7 @@ function CreatePizzaTable(props) {
             {props.pizzas.map(pizza => 
               
               <div key={pizza.nev}>
-                <div onClick={() => toggleSelection(pizza)} className={"row selectableElement "+(selected === pizza.nev ? "selected" : "")}>
+                <div onClick={() => toggleSelection(pizza)} className={"row selectable-element "+(selected === pizza.nev ? "selected" : "")}>
                   <div className="cell" key={"cell"+pizza.nev}>{pizza.nev}</div>
                   <div className="cell" key={"cell"+pizza.kategorianev}>{pizza.kategorianev}</div>
                   <div className="cell" key={"cell"+pizza.vegetarianus}>{pizza.vegetarianus == 1 ? "✓" : "✗"}</div>

@@ -4,10 +4,10 @@ let tomb = new Array();
 let tableContents = new Array();
 
 window.onload = () => {
-    tomb.push({ nev: "apród", ar:850 });
-    tomb.push({ nev: "főnemes", ar: 950});
-    tomb.push({ nev: "király", ar: 1250});
-    tomb.push({ nev: "lovag", ar: 1150});
+    tomb.push({ nev: "apród", ar: 850 });
+    tomb.push({ nev: "főnemes", ar: 950 });
+    tomb.push({ nev: "király", ar: 1250 });
+    tomb.push({ nev: "lovag", ar: 1150 });
     createFormElements();
     printArray();
 };
@@ -76,7 +76,7 @@ function printArray(){
 function getRowElement(index) {
     
     const row = document.createElement("div");
-    row.className = defaultRow;
+    row.className = "row selectable-element";
     row.onclick = () => {
         if (selectedIndex != null) { 
             tableContents[selectedIndex].row.classList.remove("selected");
@@ -87,7 +87,7 @@ function getRowElement(index) {
             }
         }
         selectedIndex = index;
-        row.classList.push("selected");
+        row.classList.add("selected");
         editbar.classList.remove("hidden");
     }
     
@@ -97,7 +97,7 @@ function getRowElement(index) {
     `;
     
     const editbar = document.createElement("div");
-    editbar.className = defaultEditbar;
+    editbar.className = "edit-bar hidden";
     editbar.innerHTML = `
         <button class="fillbutton" onclick="startEditing(${i})">SZERKESZTÉS</button>
         <button class="fillbutton" onclick="deleteRecord(${i})">TÖRLÉS</button>

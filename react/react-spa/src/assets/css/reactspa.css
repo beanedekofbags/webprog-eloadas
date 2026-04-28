@@ -70,14 +70,6 @@ main {
     text-align: center;
     padding: 10px;
 }
-.selectableElement {
-    transition: 0.2s;
-    cursor: pointer;
-}
-
-.selected {
-    background-color: rgb(201, 206, 228);
-}
 
 .edit-bar {
     background-color: rgb(122, 132, 177);
@@ -92,8 +84,4 @@ main {
 .hidden {
     display: none;
     height: 0;
-}
-
-.selectableElement:hover {
-    background-color: rgb(211, 216, 240);
 }

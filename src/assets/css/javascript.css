@@ -23,6 +23,6 @@ main {
     overflow-x: hidden;
 }
 
-.selectableElement:hover {
+.selectable-element:hover {
     background-color: rgb(211, 216, 240);
 }
